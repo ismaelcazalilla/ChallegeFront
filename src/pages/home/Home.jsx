@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import "./style.css";
+
 const fakeRecommendations = [
   {
     _id: "52944",
@@ -52,19 +55,6 @@ const fakeRecommendations = [
     description:
       "For the saltfish, soak the salt cod overnight, changing the water a couple of times.\r\nDrain, then put the cod in a large pan of fresh water and bring to the boil. Drain again, add fresh water and bring to the boil again.\r\nSimmer for about five minutes, or until cooked through, then drain and flake the fish into large pieces. Discard any skin or bones.\r\nFor the dumplings, mix the flour and suet with a pinch of salt and 250ml/9fl oz water to make a dough.\r\nWrap the mixture in clingfilm and leave in the fridge to rest.\r\nOpen the can of ackee, drain and rinse, then set aside.\r\nHeat a tablespoon of olive oil in a pan and fry the onion until softened but not brown.\r\nAdd the spices, seasoning, pepper sauce and sliced peppers and continue to fry until the peppers are tender.\r\nAdd the chopped tomatoes, then the salt cod and mix together. Lastly stir in the ackee very gently and leave to simmer until ready to serve.\r\nWhen you’re almost ready to eat, heat about 1cm/½in vegetable oil in a frying pan and heat until just smoking.\r\nShape the dumpling mix into plum-size balls and shallow-fry until golden-brown. (CAUTION: hot oil can be dangerous. Do not leave the pan unattended.)\r\nDrain the dumplings on kitchen paper and serve with the saltfish and ackee.",
     photo: "https://www.themealdb.com/images/media/meals/vytypy1511883765.jpg",
-  },
-  {
-    _id: "52935",
-    name: "Steak Diane",
-    categoryId: "3",
-    categoryName: "Meat",
-    duration: 11,
-    complexity: "Hard",
-    people: 3,
-    ingredients: "2 eggs\r\n4 tomatoes\r\nsalt\r\npepper",
-    description:
-      'Heat oil in a 12" skillet over medium-high heat. Season steaks with salt and pepper, and add to skillet; cook, turning once, until browned on both sides and cooked to desired doneness, about 4 to 5 minutes for medium-rare. Transfer steaks to a plate, and set aside.\r\nReturn skillet to high heat, and add stock; cook until reduced until to 1⁄2 cup, about 10 minutes. Pour into a bowl, and set aside. Return skillet to heat, and add butter; add garlic and shallots, and cook, stirring, until soft, about 2 minutes. Add mushrooms, and cook, stirring, until they release any liquid and it evaporates and mushrooms begin to brown, about 2 minutes. Add cognac, and light with a match to flambée; cook until flame dies down. Stir in reserved stock, cream, Dijon, Worcestershire, and hot sauce, and then return steaks to skillet; cook, turning in sauce, until warmed through and sauce is thickened, about 4 minutes. Transfer steak to serving plates and stir parsley and chives into sauce; pour sauce over steaks to serve.',
-    photo: "https://www.themealdb.com/images/media/meals/vussxq1511882648.jpg",
   },
 ];
 
@@ -205,13 +195,76 @@ const fakeRecipes = [
   },
 ];
 
-function Home() {
+export default function Home() {
+  function renderImage(item) {
+    let imageUrl = "http://via.placeholder.com/640x360";
+    if (item && item.photo) {
+      imageUrl = item.photo;
+    }
+    return <img className="recipe-image" src={imageUrl} />;
+  }
+  function renderImageBox(item) {
+    let imageUrl = "http://via.placeholder.com/640x360";
+    if (item && item.photo) {
+      imageUrl = item.photo;
+    }
+    return <img className="recommended-image" src={imageUrl} />;
+  }
+
+  function renderRecommended() {
+    return (
+      <div>
+        <h1 className="title">Recommended</h1>
+        <div className="recommendations">
+          {fakeRecommendations.map((item, index) => {
+            return (
+              <Link to="/detail" key={index}>
+                {renderImageBox(item)}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <h1>Home</h1>
-      <p>This is the home page</p>
+      <div className="header">
+        <Link to="/">
+          <h1>Food recipes</h1>
+        </Link>
+      </div>
+      <div className="page">
+        <div className="container-top">{renderRecommended()}</div>
+        <div className="container-bottom">
+          {" "}
+          <div className="recipes">
+            <h1 className="recipes-title">Top selection</h1>
+            {fakeRecipes.map((item, index) => {
+              return (
+                <div className="recipe">
+                  {renderImage(item)}
+                  <div className="recipe-info">
+                    <div>
+                      <p className="recipe-category">{item.categoryName}</p>
+                      <h1 className="recipe-name">{item.name}</h1>
+                      <div className="recipe-stuff">
+                        <p className="recipe-time">{item.duration} minutes</p>
+                        <p className="recipe-complexity">{item.complexity}</p>
+                        <p className="recipe-people">{item.people} people</p>
+                      </div>
+                    </div>
+                    <Link className="recipe-button" to="/detail" key={index}>
+                      See more
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-export default Home;
