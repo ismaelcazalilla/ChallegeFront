@@ -2,7 +2,7 @@
 describe('Home', () => {
 
   beforeEach(() => {
-    cy.visit('localhost:3000/');
+    cy.visit('/');
   });
   
   it('should have a header with h1', () => {
