@@ -5,9 +5,7 @@ import { Provider } from 'react-redux';
 
 import App from "./App";
 import "./index.css";
-import createStore from "./redux/store/configureStore";
-
-const store = createStore();
+import store from './redux/store';
 
 ReactDOM.render(
   

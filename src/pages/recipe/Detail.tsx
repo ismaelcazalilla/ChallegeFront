@@ -51,7 +51,7 @@ export default function Detail() {
         <div className="bottom">
           <h4 className="description">Info</h4>
           <p className="description-text">{fakeData.description}</p>
-        </div>
+        </div>´`´`
       </div>
     </div>
   );
