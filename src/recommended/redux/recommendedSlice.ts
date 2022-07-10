@@ -4,13 +4,13 @@ import RecommendedService from '../service/RecommendedService';
 export const recommendedSlice = createSlice({
   name: 'recommended',
   initialState: {
-    list: []
+    recommendedList: []
   },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getAllRecommended.fulfilled, (state, action) => {
-      state.list = action.payload;
-    })
+      state.recommendedList = action.payload;
+    });
   },
 });
 
@@ -18,9 +18,9 @@ export const getAllRecommended = createAsyncThunk(
   'recommended/getAll',
   async () => {
     const response = await RecommendedService.getAll();
-    return response || [];
+    return response.data;
   }
 );
 
-export const selectAllRecommended = (state) => state.recommended.list
+export const selectAllRecommended = (state) => state.recommendedList;
 export default recommendedSlice.reducer;
