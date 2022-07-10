@@ -25,3 +25,6 @@ Use only 1 breakpoint (600px). You can refactor the current style code, but with
     <img src="https://i.ibb.co/Q6T0ybH/homeN.png" alt="Home" title="Home" width="200" height="433" />
     <img src="https://i.ibb.co/cbJWSzG/detailN.png" alt="Details" title="Details" width="200" height="433" />
 </div>
+
+## Notes:
+To run ```npm run test``` command Node version 16 o higher is needed.
