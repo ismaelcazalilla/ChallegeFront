@@ -2,18 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
 
 import App from "./App";
 import "./index.css";
-import rootReducer from "./redux/reducers";
+import createStore from "./redux/store/configureStore";
 
-const createAppStore = () => configureStore({ reducer: rootReducer });
+const store = createStore();
 
 ReactDOM.render(
   
     <React.StrictMode>
-      <Provider store={createAppStore()}>
+      <Provider store={store}>
         <BrowserRouter>
           <App />
           </BrowserRouter>
