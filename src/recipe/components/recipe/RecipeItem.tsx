@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../../../redux/hooks";
 import Recipe from '../../model/Recipe';
+import { selectRecipe } from "../../redux/RecipeSlice";
 
 const RecipeItem = (props: {item: Recipe }) => {
   const { item } = props;
+  const dispatch = useAppDispatch();
+
+  const navigateToRecipeDetail = () => dispatch(selectRecipe(item));
 
   return (
     <div className="recipe">
@@ -17,7 +22,11 @@ const RecipeItem = (props: {item: Recipe }) => {
             <p className="recipe-people">{item.people} people</p>
           </div>
         </div>
-        <Link className="recipe-button" to="/detail" key={item.id}>
+        <Link
+          className="recipe-button"
+          to="/detail"
+          key={item.id}
+          onClick={navigateToRecipeDetail}>
           See more
         </Link>
       </div>
