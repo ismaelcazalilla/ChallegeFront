@@ -18,5 +18,6 @@ export interface RecommendedResponseData {
   description: string,
   photo: string,
   createdAt: string,
-  updatedAt: string  
+  updatedAt: string,
+  __v: number
 }

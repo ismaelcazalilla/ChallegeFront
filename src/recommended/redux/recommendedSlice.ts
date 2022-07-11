@@ -22,10 +22,9 @@ export const recommendedSlice = createSlice({
 });
 
 export const getAllRecommended = createAsyncThunk(
-  'recommended/getAll',
-  async (): Promise<Recipe[]> => {
+  'recommended/getAll', async (): Promise<Recipe[]> => {
     const response = await RecommendedService.getAll();
-    return response.data.map(recipeData => RecipeMapper.map(recipeData));
+    return response?.data?.map(recipeData => RecipeMapper.map(recipeData));
   }
 );
 
