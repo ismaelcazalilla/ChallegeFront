@@ -19,7 +19,7 @@ const RecipeItem = (props: {item: Recipe }) => {
       <div className="recipe-info">
         <div>
           <p className="recipe-category">{item.categoryName}</p>
-          <h1 className="recipe-name">{item.name}</h1>
+          <h3 className="recipe-name">{item.name}</h3>
           <div className="recipe-stuff">
             <p className="recipe-time">{item.duration} minutes</p>
             <p className="recipe-complexity">{item.complexity}</p>
