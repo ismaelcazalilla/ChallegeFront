@@ -15,7 +15,7 @@ const RecommendedList = () => {
   return (
     <div className="container-top">
       <div>
-        <h1 className="title">Recommended</h1>
+        <h2 className="title">Recommended</h2>
         <div className="recommendations">
           {list.map((item: Recipe, index: number) =>
             <RecommendedItem item={item} index={index} key={`${item.id}_recommended`}/>
