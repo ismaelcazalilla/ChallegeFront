@@ -1,3 +1,5 @@
+import Ingredients from "./Ingredients";
+
 export default class Recipe {
   readonly id: string;
   readonly name: string;
@@ -7,7 +9,7 @@ export default class Recipe {
   readonly complexity: string;
   readonly people: number;
   readonly recommended: number;
-  readonly ingredients: string;
+  readonly ingredients: Ingredients;
   readonly description: string;
   readonly photo: string;
 
@@ -32,7 +34,7 @@ export default class Recipe {
     this.complexity = complexity;
     this.people = people;
     this.recommended = recommended;
-    this.ingredients = ingredients;
+    this.ingredients = new Ingredients(ingredients);
     this.description = description;
     this.photo = photo;
   }
@@ -67,7 +69,7 @@ export default class Recipe {
         complexity: this.complexity,
         people: this.people,
         recommended: this.recommended,
-        ingredients: this.ingredients,
+        ingredients: this.ingredients.value,
         description: this.description,
         photo: this.photo
       };
