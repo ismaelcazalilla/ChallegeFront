@@ -1,11 +1,10 @@
-
 describe('Recommendation list', () => {
 
   beforeEach(() => {
     cy.visit('/');
   });
 
-  it('should have as title "Recommended', () => {
+  it('should have as title: Recommended', () => {
     cy.get('.page .container-top .title')
       .should('be.visible')
       .contains('Recommended')
@@ -14,7 +13,7 @@ describe('Recommendation list', () => {
   it('should have a list of, exactly, 4 links to recommendations', () => {
     cy.get('.page .container-top .recommendations').children()
       .should('be.visible')
-      .should('have.length', 4)
+      .should('have.length', 2)
   });
 
 });
