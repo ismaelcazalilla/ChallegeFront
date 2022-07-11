@@ -28,5 +28,5 @@ export const getAllRecommended = createAsyncThunk(
   }
 );
 
-export const selectAllRecommended = (state: RecommendedState) => state.recommended.list;
+export const selectAllRecommended = (state: RecommendedState): Recipe[] => state.recommended.list;
 export default recommendedSlice.reducer;
