@@ -1,4 +1,11 @@
-export interface  RecipeResponse {
+export interface RecipeResponse {
+  data: RecipeResponseData[],
+  limit: number,
+  skip: number,
+  total: number  
+}
+
+export interface RecipeResponseData {
   _id: string,
   name: string,
   categoryId: string,
@@ -11,5 +18,6 @@ export interface  RecipeResponse {
   description: string,
   photo: string,
   createdAt: string,
-  updatedAt: string  
+  updatedAt: string,
+  __v: number
 }
