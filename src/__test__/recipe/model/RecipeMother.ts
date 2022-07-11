@@ -1,6 +1,6 @@
-import Recipe from "../../model/Recipe";
+import Recipe from "../../../recipe/model/Recipe";
 import { RecommendedResponseData } from "../../../recommended/service/RecommendedResponse";
-import { RecipeResponseData } from "../../service/RecipeResponse";
+import { RecipeResponseData } from "../../../recipe/service/RecipeResponse";
 
 export default class RecipeMother {
 

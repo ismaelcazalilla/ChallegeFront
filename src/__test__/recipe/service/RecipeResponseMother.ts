@@ -1,4 +1,4 @@
-import { RecipeResponse, RecipeResponseData } from "../../service/RecipeResponse"
+import { RecipeResponse, RecipeResponseData } from "../../../recipe/service/RecipeResponse"
 
 export class RecipeResponseMother {
 

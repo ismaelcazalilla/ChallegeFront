@@ -1,4 +1,4 @@
-import RecommendedService from "../../service/RecommendedService";
+import RecommendedService from "../../../recommended/service/RecommendedService";
 
 describe('RecipeService', () => {
 

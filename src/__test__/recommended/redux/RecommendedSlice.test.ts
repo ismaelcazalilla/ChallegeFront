@@ -1,9 +1,9 @@
 import store from '../../../redux/store';
-import RecommendedService from '../../service/RecommendedService';
+import RecommendedService from '../../../recommended/service/RecommendedService';
 import { RecommendedResponseMother } from '../service/RecommendedResponseMother';
-import { getAllRecommended } from '../../redux/RecommendedSlice';
-import { RecommendedResponse } from '../../service/RecommendedResponse';
-import RecipeMother from '../../../recipe/__test__/model/RecipeMother';
+import { getAllRecommended } from '../../../recommended/redux/RecommendedSlice';
+import { RecommendedResponse } from '../../../recommended/service/RecommendedResponse';
+import RecipeMother from '../../recipe/model/RecipeMother';
 
 describe('RecommendedSlice', () => {
   let apiResponse: RecommendedResponse;
