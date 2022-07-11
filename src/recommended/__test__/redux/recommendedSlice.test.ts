@@ -14,9 +14,9 @@ describe('RecommendedSlice', () => {
   });
 
   it('should initially set recommended list to an empty list', async () => {
-    const state = store.getState().recommended;
+    const state = store.getState();
 
-    expect(state).toEqual({ list: [] });
+    expect(state.recommended.list).toEqual([]);
   });
 
   it('should be able to fetch all recommended', async () => {

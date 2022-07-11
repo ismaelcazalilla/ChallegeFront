@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import { getAllRecommended, selectAllRecommended } from '../../redux/RecommendedSlice';
 import { RecommendedItem } from '../recommended/RecommendedItem';
 import Recipe from '../../../recipe/model/Recipe';

@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import recipeSlice from '../recipe/redux/RecipeSlice';
 import recommendedSlice from '../recommended/redux/RecommendedSlice';
 
 const store = configureStore({
-  reducer: recommendedSlice
+  reducer: {
+    recipe: recipeSlice,
+    recommended: recommendedSlice
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>

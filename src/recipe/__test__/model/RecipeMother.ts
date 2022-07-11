@@ -1,5 +1,6 @@
-import { RecommendedResponseData } from "../../../recommended/service/RecommendedResponse";
 import Recipe from "../../model/Recipe";
+import { RecommendedResponseData } from "../../../recommended/service/RecommendedResponse";
+import { RecipeResponseData } from "../../service/RecipeResponse";
 
 export default class RecipeMother {
 
@@ -21,5 +22,9 @@ export default class RecipeMother {
 
   static fromRecommendedData(recommendedData: RecommendedResponseData): Recipe {
     return Recipe.fromPrimitives({ ...recommendedData, id: recommendedData._id });
+  }
+
+  static fromRecipeData(recipeData: RecipeResponseData): Recipe {
+    return Recipe.fromPrimitives({ ...recipeData, id: recipeData._id });
   }
 }

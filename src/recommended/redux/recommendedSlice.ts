@@ -1,13 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import Recipe from '../../recipe/model/Recipe';
 import RecipeMapper from '../../recipe/service/ReciveMapper';
+import { RootState } from '../../redux/store';
 import RecommendedService from '../service/RecommendedService';
 import { RecommendedState } from './RecommendedState';
 
 export const initialRecommendedState: RecommendedState = {
-  recommended: {
-    list: []
-  }
+  list: []
 }
 
 export const recommendedSlice = createSlice({
@@ -16,7 +15,7 @@ export const recommendedSlice = createSlice({
   reducers: {},
   extraReducers: (builder): void => {
     builder.addCase(getAllRecommended.fulfilled, (state, action) => {
-      state.recommended.list = action.payload;
+      state.list = action.payload;
     });
   },
 });
@@ -28,5 +27,5 @@ export const getAllRecommended = createAsyncThunk(
   }
 );
 
-export const selectAllRecommended = (state: RecommendedState): Recipe[] => state.recommended.list;
+export const selectAllRecommended = (state: RootState): Recipe[] => state.recommended.list;
 export default recommendedSlice.reducer;

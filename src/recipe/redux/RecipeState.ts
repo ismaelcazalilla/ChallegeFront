@@ -1,5 +1,5 @@
 import Recipe from "../../recipe/model/Recipe";
 
-export interface RecommendedState {
+export interface RecipeState {
   list: Recipe[]
 }
