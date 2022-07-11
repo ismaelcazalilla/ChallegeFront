@@ -11,7 +11,11 @@ const RecipeItem = (props: {item: Recipe }) => {
 
   return (
     <div className="recipe">
-      {renderImage(item)}
+      <img
+        className="recipe-image"
+        src={item.photo || process.env.REACT_APP_RECIPE_PHOTO_PLACEHOLDER}
+        alt={item.name}
+      />
       <div className="recipe-info">
         <div>
           <p className="recipe-category">{item.categoryName}</p>
@@ -33,14 +37,6 @@ const RecipeItem = (props: {item: Recipe }) => {
     </div>
   );
 
-}
-
-function renderImage(item: Recipe) {
-  let imageUrl = "http://via.placeholder.com/640x360";
-  if (item && item.photo) {
-    imageUrl = item.photo;
-  }
-  return <img className="recipe-image" src={imageUrl} alt={item.name} />;
 }
 
 export default RecipeItem;

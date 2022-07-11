@@ -6,15 +6,11 @@ export const RecommendedItem = (props: {item: Recipe, index: number }) => {
 
   return (
     <Link to="/detail" key={item.id}>
-      {renderImageBox(item)}
+      <img
+        className="recommended-image"
+        src={item.photo || process.env.REACT_APP_RECIPE_PHOTO_PLACEHOLDER}
+        alt={item.name}
+      />
     </Link>
   )
-}
-
-function renderImageBox(item: Recipe) {
-  let imageUrl = "http://via.placeholder.com/640x360";
-  if (item && item.photo) {
-    imageUrl = item.photo;
-  }
-  return <img className="recommended-image" src={imageUrl} alt={item.name}/>;
 }
