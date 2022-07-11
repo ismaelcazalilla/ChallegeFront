@@ -24,7 +24,7 @@ const RecipeItem = (props: {item: Recipe }) => {
         </div>
         <Link
           className="recipe-button"
-          to="/detail"
+          to={`/detail/${item.id}`}
           key={item.id}
           onClick={navigateToRecipeDetail}>
           See more
