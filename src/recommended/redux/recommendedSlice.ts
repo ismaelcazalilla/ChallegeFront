@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import RecipeMapper from '../../recipe/service/ReciveMapper';
 import RecommendedService from '../service/RecommendedService';
 
 export const recommendedSlice = createSlice({
@@ -18,7 +19,7 @@ export const getAllRecommended = createAsyncThunk(
   'recommended/getAll',
   async () => {
     const response = await RecommendedService.getAll();
-    return response.data;
+    return response.data.map(recipeData => RecipeMapper.map(recipeData));
   }
 );
 

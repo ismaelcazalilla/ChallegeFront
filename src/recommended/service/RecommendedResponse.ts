@@ -1,4 +1,11 @@
-export interface  RecommendedResponse {
+export interface RecommendedResponse {
+  data: RecommendedResponseData[],
+  limit: number,
+  skip: number,
+  total: number  
+}
+
+export interface RecommendedResponseData {
   _id: string,
   name: string,
   categoryId: string,
