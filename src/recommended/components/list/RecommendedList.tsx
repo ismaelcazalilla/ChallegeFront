@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { Link } from "react-router-dom";
-
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
 import { getAllRecommended, selectAllRecommended } from '../../redux/RecommendedSlice';
+import { RecommendedItem } from '../recommended/RecommendedItem';
+import Recipe from '../../../recipe/model/Recipe';
 
 const RecommendedList = () => {
-  const list = useAppSelector(selectAllRecommended);
+  const list: Recipe[] = useAppSelector(selectAllRecommended);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -17,26 +17,14 @@ const RecommendedList = () => {
       <div>
         <h1 className="title">Recommended</h1>
         <div className="recommendations">
-          {list.map((item, index) => {
-            return (
-              <Link to="/detail" key={index}>
-                {renderImageBox(item)}
-            </Link>
-            )
-          })}
+          {list.map((item: Recipe, index: number) =>
+            <RecommendedItem item={item} index={index} />
+          )}
         </div>
       </div>
     </div>
   )
 
-}
-
-function renderImageBox(item) {
-  let imageUrl = "http://via.placeholder.com/640x360";
-  if (item && item.photo) {
-    imageUrl = item.photo;
-  }
-  return <img className="recommended-image" src={imageUrl} />;
 }
 
 
