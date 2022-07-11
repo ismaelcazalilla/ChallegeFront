@@ -1,5 +1,6 @@
 import Recipe from "../../recipe/model/Recipe";
 
 export interface RecipeState {
-  list: Recipe[]
+  list: Recipe[],
+  selected: Recipe
 }

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../redux/store';
 import Recipe from '../model/Recipe';
 import RecipeService from '../service/RecipeService';
@@ -6,15 +6,20 @@ import RecipeMapper from '../service/ReciveMapper';
 import { RecipeState } from './RecipeState';
 
 export const initialRecipeState: RecipeState = {
-  list: []
+  list: [],
+  selected: null
 }
 
 export const recipeSlice = createSlice({
   name: 'recipe',
   initialState: initialRecipeState,
-  reducers: {},
+  reducers: {
+    selectRecipe: (state, action: PayloadAction<Recipe>) => {
+      state.selected = action.payload
+    }
+  },
   extraReducers: (builder): void => {
-    builder.addCase(getAllRecipes.fulfilled, (state, action) => {
+    builder.addCase(getAllRecipes.fulfilled, (state, action: PayloadAction<Recipe[]>) => {
       state.list = action.payload;
     });
   },
@@ -27,5 +32,9 @@ export const getAllRecipes = createAsyncThunk(
   }
 );
 
+export const { selectRecipe } = recipeSlice.actions
+
 export const selectAllRecipes = (state: RootState): Recipe[] => state.recipe.list;
+export const selectSelectedRecipe = (state: RootState): Recipe => state.recipe.selected;
+
 export default recipeSlice.reducer;
