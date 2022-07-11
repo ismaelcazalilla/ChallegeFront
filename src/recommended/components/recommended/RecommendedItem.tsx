@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import Recipe from "../../../recipe/model/Recipe"
 
 export const RecommendedItem = (props: {item: Recipe, index: number }) => {
-  const { item , index } = props;
+  const { item } = props;
 
   return (
-    <Link to="/detail" key={index.toString()}>
+    <Link to="/detail" key={item.id}>
       {renderImageBox(item)}
     </Link>
   )
