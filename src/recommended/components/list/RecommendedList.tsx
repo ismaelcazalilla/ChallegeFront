@@ -13,16 +13,18 @@ const RecommendedList = () => {
   }, [dispatch]);
  
   return (
-    <div>
-      <h1 className="title">Recommended</h1>
-      <div className="recommendations">
-        {list.map((item, index) => {
-          return (
-            <Link to="/detail" key={index}>
-              {renderImageBox(item)}
-          </Link>
-          )
-        })}
+    <div className="container-top">
+      <div>
+        <h1 className="title">Recommended</h1>
+        <div className="recommendations">
+          {list.map((item, index) => {
+            return (
+              <Link to="/detail" key={index}>
+                {renderImageBox(item)}
+            </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
