@@ -5,7 +5,6 @@ export default class RecommendedService {
 
   static async getAll(): Promise<RecommendedResponse> {
     const response = await fetch(process.env.REACT_APP_RECOMMENDED_ENDPOINT);
-    console.log(process.env)
 
     if (!response.ok) {
       throw new Error('Recommendations could not been fetched');
