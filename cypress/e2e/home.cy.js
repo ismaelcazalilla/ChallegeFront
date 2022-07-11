@@ -10,8 +10,8 @@ describe('Home', () => {
   });
 
   it('should have page with top and bottom container', () => {
-    cy.get('.page .container-top').should('be.visible');
-    cy.get('.page .container-bottom').should('be.visible');
+    cy.get('main .container-top').should('be.visible');
+    cy.get('main .container-bottom').should('be.visible');
   });
 
 });
