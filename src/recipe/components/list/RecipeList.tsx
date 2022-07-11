@@ -16,7 +16,7 @@ const RecipeList = () => {
     <div className="container-bottom">
       <div className="recipes">
         <h2 className="recipes-title">Top selection</h2>
-        { list.map((item) => <RecipeItem item={item}/>) }
+        { list.map((item) => <RecipeItem item={item} key={item.id}/>) }
       </div>
     </div>
   )

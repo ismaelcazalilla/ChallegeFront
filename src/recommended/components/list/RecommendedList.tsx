@@ -18,7 +18,7 @@ const RecommendedList = () => {
         <h1 className="title">Recommended</h1>
         <div className="recommendations">
           {list.map((item: Recipe, index: number) =>
-            <RecommendedItem item={item} index={index} />
+            <RecommendedItem item={item} index={index} key={`${item.id}_recommended`}/>
           )}
         </div>
       </div>
