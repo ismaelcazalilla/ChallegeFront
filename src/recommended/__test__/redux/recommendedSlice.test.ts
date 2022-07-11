@@ -1,7 +1,7 @@
 import store from '../../../redux/store';
 import RecommendedService from '../../service/RecommendedService';
 import { RecommendedResponseMother } from '../service/RecommendedResponseMother';
-import { getAllRecommended } from '../../redux/recommendedSlice';
+import { getAllRecommended } from '../../redux/RecommendedSlice';
 import { RecommendedResponse } from '../../service/RecommendedResponse';
 import RecipeMother from '../../../recipe/__test__/model/RecipeMother';
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 import { useAppSelector, useAppDispatch } from '../../../redux/hooks';
-import { getAllRecommended, selectAllRecommended } from '../../redux/recommendedSlice';
+import { getAllRecommended, selectAllRecommended } from '../../redux/RecommendedSlice';
 
 const RecommendedList = () => {
   const list = useAppSelector(selectAllRecommended);
