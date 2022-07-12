@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import Recipe from '../../model/Recipe';
 import { getAllRecipes, selectAllRecipes } from '../../redux/RecipeSlice';
-import RecipeItem from '../recipe/RecipeItem';
+import RecipeItem from '../item/RecipeItem';
 import styled from 'styled-components';
 
 const RecipeListContainer = styled.section`

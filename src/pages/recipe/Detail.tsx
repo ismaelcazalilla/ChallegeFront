@@ -1,4 +1,4 @@
-import RecipeDetail from "../../recipe/components/recipe/RecipeDetail";
+import RecipeDetail from "../../recipe/components/detail/RecipeDetail";
 import Header from "../shared/header/Header";
 import "./style.css";
 
