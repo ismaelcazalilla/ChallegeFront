@@ -7,13 +7,27 @@ const Nav = styled.nav`
   padding: 0 100px;
   position: fixed;
   width: 100%;
-  height: 50px;
+  height: 75px;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (min-width: 600px) {
+    height: 50px;
+  }
 `;
 
 const Title = styled.h1`
   color: white;
+  font-size: 3em;
+
+  @media (min-width: 600px) {
+    font-size: 1.5em;
+  }
 `;
 
 const Header = () => {
