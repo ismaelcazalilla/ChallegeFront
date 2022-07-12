@@ -10,24 +10,46 @@ const Main = styled.main`
   padding-top: 50px;
 `;
 
-const RecipeContainer = styled.section`
-  padding: 20px 100px;
+const RecipeDescriptionContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  @media(min-width: 600px) {
+    padding: 20px 100px;
+  }
 `;
 
-const RecipeContainerFlex = styled(RecipeContainer)`
+const RecipeInfoContainer = styled.section`
   display: flex;
+  flex-direction: column;
+
+  @media(min-width: 600px) {
+    flex-direction: row;
+    padding: 20px 100px;
+  }
 `;
 
 const RecipeImg = styled.img`
-  height: 400px;
+  height: 250px;
   border-radius: 20px;
+  object-fit: cover;
+
+  @media(min-width: 600px) {
+    height: 400px;
+  }
 `;
 
 const RecipeInfo = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   flex: 1;
+  padding: 20px;
+
+  @media(min-width: 600px) {
+    padding: 0;
+  }
 `;
 
 const RecipeName = styled.h2`
@@ -35,25 +57,27 @@ const RecipeName = styled.h2`
   font-size: 25px;
   font-weight: bold;
   color: #333;
-  margin-top: 10px;
+  margin: 10px 0;
 }`;
 
-const RecipeIngredient = styled.p`
-  margin-top: 10px;
-  text-align: center;
-`;
-
 const RecipeCategory = styled.p`
+  margin-top: 10px;
   font-size: 20px;
   font-weight: bold;
   color: #666;
 `;
 
 const RecipeDescription = styled.h4`
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
+
+  @media(min-width: 600px) {
+    text-align: left;
+    font-size: 30px;
+  }
 `;
 
 const RecipeDescriptionText = styled.p`
@@ -68,7 +92,7 @@ const RecipeDetail = () => {
 
   return (
     <Main>
-      <RecipeContainerFlex>
+      <RecipeInfoContainer>
         <RecipeImg 
           src={selected.photo || process.env.REACT_APP_RECIPE_PHOTO_PLACEHOLDER}
           alt={selected.name}
@@ -79,11 +103,11 @@ const RecipeDetail = () => {
           <RecipeStuff item={selected} />
           <RecipeIngredients ingredients={selected?.ingredients} />
         </RecipeInfo>
-      </RecipeContainerFlex>
-      <RecipeContainer>
+      </RecipeInfoContainer>
+      <RecipeDescriptionContainer>
         <RecipeDescription>Info</RecipeDescription>
         <RecipeDescriptionText>{selected.description}</RecipeDescriptionText>
-      </RecipeContainer>
+      </RecipeDescriptionContainer>
     </Main>
   );
 

@@ -4,17 +4,27 @@ import Ingredients from "../../model/Ingredients";
 
 const RecipeIngredientsContainer = styled.div`
   margin-top: 40px;
+  width: 100%;
+
+  @media(min-width: 600px) {
+    width: auto;
+  }
 `;
 
 const RecipeIngredientsTitle = styled.h4`
   font-size: 20px;
   color: #333;
   font-weight: bold;
+  text-align: center
 `;
 
 const RecipeIngredient = styled.p`
   margin-top: 10px;
-  text-align: center;
+  text-align: left;
+
+  @media(min-width: 600px){
+    text-align: center;
+  }
 `;
 
 
