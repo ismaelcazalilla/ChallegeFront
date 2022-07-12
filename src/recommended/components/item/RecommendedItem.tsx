@@ -8,6 +8,10 @@ const RecommendedImg = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 20px;
+
+  @media(min-width: 600px) {
+    max-width: 300px;
+  }
 `;
 
 export const RecommendedItem = (props: {item: Recipe, index: number }) => {

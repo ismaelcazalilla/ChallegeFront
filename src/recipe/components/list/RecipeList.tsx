@@ -6,20 +6,33 @@ import RecipeItem from '../item/RecipeItem';
 import styled from 'styled-components';
 
 const RecipeListContainer = styled.section`
-  padding: 20px 100px;
+  padding: 20px;
+
+  @media(min-width: 600px) {
+    padding: 20px 100px;
+  }
 `;
 
 const RecipesContainer = styled.div`
   gap: 10px;
   display: flex;
   flex-direction: column;
+
+  @media(min-width: 600px) {
+    height: auto;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+
+  @media(min-width: 600px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 `;
 
 const RecipeList = () => {

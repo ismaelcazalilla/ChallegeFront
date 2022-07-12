@@ -7,11 +7,28 @@ import RecipeStuff from "./RecipeStuff";
 
 
 const RecipeInfoContainer = styled.div`
-  flex: 1;
-  padding: 20px 30px;
+  padding: 10px 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  height: 125px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  @media(min-width: 600px) {
+    padding: 20px 30px;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+
+    > div {
+      display: block;
+    }
+  }
 `;
 
 const RecipeCategory = styled.p`
@@ -21,10 +38,14 @@ const RecipeCategory = styled.p`
 `;
 
 const RecipeName = styled.h3`
-  font-size: 25px;
-  font-weight: bold;
   color: #333;
-  margin-top: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 5px 0;
+
+  @media(min-width: 600px) {
+    font-weight: bold;
+  }
 `;
 
 const SeeMoreButton = styled(Link)`

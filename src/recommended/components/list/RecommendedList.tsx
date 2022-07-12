@@ -20,7 +20,7 @@ const RecommendedContainer = styled.div`
   gap: 20px;
   height: 200px;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   @media(min-width: 600px) {
     height: auto;
@@ -49,13 +49,11 @@ const RecommendedList = () => {
  
   return (
     <RecommendedListContainer>
-      <div>
-        <Title>Recommended</Title>
-        <RecommendedContainer>{list.map((item: Recipe, index: number) =>
-            <RecommendedItem item={item} index={index} key={`${item.id}_recommended`}/>
-          )}
-        </RecommendedContainer>
-      </div>
+      <Title>Recommended</Title>
+      <RecommendedContainer>{list.map((item: Recipe, index: number) =>
+          <RecommendedItem item={item} index={index} key={`${item.id}_recommended`}/>
+        )}
+      </RecommendedContainer>
     </RecommendedListContainer>
   )
 

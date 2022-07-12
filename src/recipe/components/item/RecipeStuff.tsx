@@ -3,13 +3,19 @@ import styled from 'styled-components';
 
 const RecipeStuffContainer = styled.div`
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  margin-top: 0px;
+  justify-content: flex-start;
+
+  @media(min-width: 600px) {
+    gap: 20px;
+  }
 `;
 
-const RecipeStuffInfo = styled.p`
+const RecipeStuffInfo = styled.span`
   font-size: 18px;
   color: #666;
+  width: auto;
+  padding-right: 10px;
 `;
 
 
