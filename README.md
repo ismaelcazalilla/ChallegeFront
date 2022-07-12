@@ -38,7 +38,7 @@ The features implemented in this project are:
 ### Testing:
 #### Unit
 The script to run unit tests is: ```npm run test:unit```.
-Command Node version 16 o higher is needed. Is possible to switch between Node versions using ```nvm use 16```to configure version 16.
+Node version 16 o higher is needed. Is possible to switch between Node versions using ```nvm use 16```to configure version 16.
 
 #### e2e
 To run e2e tests, created in Cypress, execute ```npm run test:features```.
