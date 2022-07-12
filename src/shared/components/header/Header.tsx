@@ -24,6 +24,7 @@ const Nav = styled.nav`
 const Title = styled.h1`
   color: white;
   font-size: 3em;
+  text-align: center;
 
   @media (min-width: 600px) {
     font-size: 1.5em;
