@@ -27,4 +27,18 @@ Use only 1 breakpoint (600px). You can refactor the current style code, but with
 </div>
 
 ## Notes:
-To run ```npm run test``` command Node version 16 o higher is needed.
+The features implemented in this project are:
+* State management (Redux).
+* Typescript.
+* Unit testing (Jest).
+* Feature-e2e testing (Cypress).
+* Styled components.
+* Responsive (breakpoint 600px).
+
+### Testing:
+#### Unit
+The script to run unit tests is: ```npm run test:unit```.
+Command Node version 16 o higher is needed. Is possible to switch between Node versions using ```nvm use 16```to configure version 16.
+
+#### e2e
+To run e2e tests, created in Cypress, execute ```npm run test:features```.
