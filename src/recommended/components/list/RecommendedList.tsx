@@ -6,7 +6,11 @@ import Recipe from '../../../recipe/model/Recipe';
 import styled from 'styled-components';
 
 const RecommendedListContainer = styled.section`
-  padding: 20px 100px;
+  padding: 20px;
+
+  @media(min-width: 600px) {
+    padding: 20px 100px;
+  }
 `;
 
 const RecommendedContainer = styled.div`
@@ -16,13 +20,23 @@ const RecommendedContainer = styled.div`
   gap: 20px;
   height: 200px;
   align-items: stretch;
+  justify-content: space-between;
+
+  @media(min-width: 600px) {
+    height: auto;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+
+  @media(min-width: 600px) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
 `;
 
 const RecommendedList = () => {

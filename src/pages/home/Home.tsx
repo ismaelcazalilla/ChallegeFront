@@ -5,7 +5,11 @@ import styled from 'styled-components';
 
 const Main = styled.main`
   background-color: #fafafa;
-  padding-top: 50px;
+  padding-top: 100px;
+
+  @media(min-width: 600px) {
+    padding-top: 50px;
+  }
 `;
 
 export default function Home() {
