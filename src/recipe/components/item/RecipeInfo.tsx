@@ -3,6 +3,7 @@ import { useAppDispatch } from "../../../redux/hooks";
 import Recipe from '../../model/Recipe';
 import { selectRecipe } from "../../redux/RecipeSlice";
 import styled from 'styled-components';
+import RecipeStuff from "./RecipeStuff";
 
 
 const RecipeInfoContainer = styled.div`
@@ -26,17 +27,6 @@ const RecipeName = styled.h3`
   margin-top: 10px;
 `;
 
-const RecipeStuff = styled.div`
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-`;
-
-const RecipeStuffInfo = styled.p`
-  font-size: 18px;
-  color: #666;
-`;
-
 
 const RecipeInfo = (props: {item: Recipe }) => {
   const { item } = props;
@@ -49,11 +39,7 @@ const RecipeInfo = (props: {item: Recipe }) => {
       <div>
         <RecipeCategory>{item.categoryName}</RecipeCategory>
         <RecipeName>{item.name}</RecipeName>
-        <RecipeStuff>
-          <RecipeStuffInfo>{item.duration} minutes</RecipeStuffInfo>
-          <RecipeStuffInfo>{item.complexity}</RecipeStuffInfo>
-          <RecipeStuffInfo>{item.people} people</RecipeStuffInfo>
-        </RecipeStuff>
+        <RecipeStuff item={item} />
       </div>
       <Link
         className="recipe-button"
