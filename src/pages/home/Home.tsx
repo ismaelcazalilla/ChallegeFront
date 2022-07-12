@@ -1,6 +1,6 @@
 import RecipeList from "../../recipe/components/list/RecipeList";
 import RecommendedList from "../../recommended/components/list/RecommendedList";
-import Header from "../shared/header/Header";
+import Header from "../../shared/components/header/Header";
 import styled from 'styled-components';
 
 const Main = styled.main`

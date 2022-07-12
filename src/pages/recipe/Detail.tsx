@@ -1,5 +1,5 @@
 import RecipeDetail from "../../recipe/components/detail/RecipeDetail";
-import Header from "../shared/header/Header";
+import Header from "../../shared/components/header/Header";
 
 export default function Detail() {
   return (
