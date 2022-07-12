@@ -5,19 +5,19 @@ describe('Recommendation', () => {
   });
 
   it('should have a link to "/detail"', () => {
-    cy.get('.recommendations a').first()
-      .should('have.attr', 'href', '/detail')
+    cy.get('#recommended-list a').first()
+      .should('have.attr', 'href', '/detail/616d912b807e01aaeea0e411')
   });
 
   it('should have an image', () => {
-    cy.get('.recommendations img').first()
+    cy.get('#recommended-list img').first()
       .should('have.attr', 'src')
   });
 
   it('should navigate to detail when link is clicked', () => {
-    cy.get('.recommendations a').first().click()
+    cy.get('#recommended-list a').first().click()
     
-    cy.url().should('contains', '/detail')
+    cy.url().should('contains', '/detail/616d912b807e01aaeea0e411')
 
   });
 });

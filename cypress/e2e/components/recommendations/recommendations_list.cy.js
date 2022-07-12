@@ -5,13 +5,13 @@ describe('Recommendation list', () => {
   });
 
   it('should have as title: Recommended', () => {
-    cy.get('.page .container-top .title')
+    cy.get('#recommended-list h2')
       .should('be.visible')
       .contains('Recommended')
   });
 
-  it('should have a list of, exactly, 4 links to recommendations', () => {
-    cy.get('.page .container-top .recommendations').children()
+  it('should have a list of, exactly, 2 recommendations', () => {
+    cy.get('#recommended-list a')
       .should('be.visible')
       .should('have.length', 2)
   });

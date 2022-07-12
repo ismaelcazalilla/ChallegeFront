@@ -48,7 +48,7 @@ const RecommendedList = () => {
   }, [dispatch]);
  
   return (
-    <RecommendedListContainer>
+    <RecommendedListContainer id="recommended-list">
       <Title>Recommended</Title>
       <RecommendedContainer>{list.map((item: Recipe, index: number) =>
           <RecommendedItem item={item} index={index} key={`${item.id}_recommended`}/>
