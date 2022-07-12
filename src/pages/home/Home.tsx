@@ -3,8 +3,6 @@ import RecommendedList from "../../recommended/components/list/RecommendedList";
 import Header from "../shared/header/Header";
 import styled from 'styled-components';
 
-import "./style.css";
-
 const Main = styled.main`
   background-color: #fafafa;
   padding-top: 50px;

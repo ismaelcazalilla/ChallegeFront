@@ -27,6 +27,33 @@ const RecipeName = styled.h3`
   margin-top: 10px;
 `;
 
+const SeeMoreButton = styled(Link)`
+  align-self: flex-end;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+
+  &:hover {
+    align-self: flex-end;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: black;
+  }
+
+  &:active {
+    align-self: flex-end;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: black;
+    transform: scale(0.9);
+  }
+`;
 
 const RecipeInfo = (props: {item: Recipe }) => {
   const { item } = props;
@@ -41,13 +68,13 @@ const RecipeInfo = (props: {item: Recipe }) => {
         <RecipeName>{item.name}</RecipeName>
         <RecipeStuff item={item} />
       </div>
-      <Link
+      <SeeMoreButton
         className="recipe-button"
         to={`/detail/${item.id}`}
         key={item.id}
         onClick={navigateToRecipeDetail}>
         See more
-      </Link>
+      </SeeMoreButton>
     </RecipeInfoContainer>
   );
 
