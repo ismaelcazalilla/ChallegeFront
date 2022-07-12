@@ -3,6 +3,7 @@ import { useAppSelector } from '../../../redux/hooks';
 import Recipe from "../../model/Recipe";
 import styled from 'styled-components';
 import RecipeStuff from "../item/RecipeStuff";
+import RecipeIngredients from "./RecipeIngredients";
 
 const Main = styled.main`
   background-color: #fafafa;
@@ -36,16 +37,6 @@ const RecipeName = styled.h2`
   color: #333;
   margin-top: 10px;
 }`;
-
-const RecipeIngredientsContainer = styled.div`
-  margin-top: 40px;
-`;
-
-const RecipeIngredientsTitle = styled.h4`
-  font-size: 20px;
-  color: #333;
-  font-weight: bold;
-`;
 
 const RecipeIngredient = styled.p`
   margin-top: 10px;
@@ -86,12 +77,7 @@ const RecipeDetail = () => {
           <RecipeCategory>{selected.categoryName}</RecipeCategory>
           <RecipeName>{selected.name}</RecipeName>
           <RecipeStuff item={selected} />
-          <RecipeIngredientsContainer>
-            <RecipeIngredientsTitle>Ingredients</RecipeIngredientsTitle>
-            {selected.ingredients.splitIngredients().map((ingredient, index) => (
-              <RecipeIngredient key={`${index}_ingredients`}>{ingredient}</RecipeIngredient>
-            ))}
-          </RecipeIngredientsContainer>
+          <RecipeIngredients ingredients={selected?.ingredients} />
         </RecipeInfo>
       </RecipeContainerFlex>
       <RecipeContainer>
