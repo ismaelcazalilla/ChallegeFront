@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import { getAllRecommended, selectAllRecommended } from '../../redux/RecommendedSlice';
-import { RecommendedItem } from '../recommended/RecommendedItem';
+import { RecommendedItem } from '../item/RecommendedItem';
 import Recipe from '../../../recipe/model/Recipe';
 import styled from 'styled-components';
 
