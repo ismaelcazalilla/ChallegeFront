@@ -3,6 +3,24 @@ import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import Recipe from '../../model/Recipe';
 import { getAllRecipes, selectAllRecipes } from '../../redux/RecipeSlice';
 import RecipeItem from '../recipe/RecipeItem';
+import styled from 'styled-components';
+
+const RecipeListContainer = styled.section`
+  padding: 20px 100px;
+`;
+
+const RecipesContainer = styled.div`
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Title = styled.h2`
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+`;
 
 const RecipeList = () => {
   const list: Recipe[] = useAppSelector(selectAllRecipes);
@@ -13,12 +31,12 @@ const RecipeList = () => {
   }, [dispatch]);
  
   return (
-    <div className="container-bottom">
-      <div className="recipes">
-        <h2 className="recipes-title">Top selection</h2>
+    <RecipeListContainer>
+      <RecipesContainer>
+        <Title>Top selection</Title>
         { list.map((item) => <RecipeItem item={item} key={item.id}/>) }
-      </div>
-    </div>
+      </RecipesContainer>
+    </RecipeListContainer>
   )
 
 }
